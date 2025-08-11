@@ -179,7 +179,7 @@ const menuItems = [
 .sidebar {
   width: var(--sidebar-width);
   background: var(--sc-base-6);
-  min-height: var(--sidebar-height);
+  height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
