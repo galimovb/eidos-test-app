@@ -34,6 +34,6 @@ import SessionsPage from "@/pages/SessionsPage.vue";
 
 .app-layout__content {
   flex: 1;
-  padding: 1rem;
+  padding: 8px 8px  0 8px;
 }
 </style>

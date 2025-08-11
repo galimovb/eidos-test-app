@@ -175,15 +175,17 @@ function toggleSort(key: string) {
                 style="cursor: pointer; user-select: none;"
                 :aria-sort="sortKey === header.key ? (sortOrder === 'asc' ? 'ascending' : 'descending') : 'none'"
             >
-              {{ header.label }}
+              <div class="sessions-table__header-content">
+                {{ header.label }}
 
-              <PhCaretDown
-                  v-if="sortKey === header.key && sortOrder === 'asc'"
-                  size="16"
-              />
-              <PhCaretUp
-                  v-else-if="sortKey === header.key && sortOrder === 'desc'"
-              />
+                <PhCaretDown
+                    v-if="sortKey === header.key && sortOrder === 'asc'"
+                    size="16"
+                />
+                <PhCaretUp
+                    v-else-if="sortKey === header.key && sortOrder === 'desc'"
+                />
+              </div>
             </th>
           </tr>
           </thead>
@@ -276,6 +278,7 @@ function toggleSort(key: string) {
   width: 100%;
   min-width: 1000px;
   border-collapse: collapse;
+  table-layout: fixed;
 }
 
 .sessions-table__header {
@@ -318,4 +321,17 @@ function toggleSort(key: string) {
   background-color: #F5F7F9;
   padding: 11px 16px;
 }
+
+.sessions-table__header-content{
+  display: flex;
+  gap:10px;
+  align-items: center;
+}
+
+.sessions-table th:nth-child(1) { width: 16%; }   /* Дата */
+.sessions-table th:nth-child(2) { width: 13%; }   /* Статус */
+.sessions-table th:nth-child(3) { width: 27%; } /* Название модуля */
+.sessions-table th:nth-child(4) { width: 13.4%; }  /* Тип сессии */
+.sessions-table th:nth-child(5) { width: 16.6%; } /* Комната */
+.sessions-table th:nth-child(6) { width: 14.0%; } /* Группа */
 </style>
